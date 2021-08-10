@@ -18,3 +18,4 @@ after_success:
   - docker push pedrorodrigues/multi-nginx
   - docker push pedrorodrigues/multi-server
   - docker push pedrorodrigues/multi-worker
+  
