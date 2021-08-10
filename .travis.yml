@@ -4,19 +4,19 @@ services:
   - docker
 
 before_install:
-  - docker build -t pedrorodrigues/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t pedrovitorlima/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true pedrorodrigues/react-test npm test
+  - docker run -e CI=true pedrovitorlima/react-test npm test
   
 after_success:
-  - docker build -t pedrorodrigues/multi-client ./client
-  - docker build -t pedrorodrigues/multi-nginx ./nginx
-  - docker build -t pedrorodrigues/multi-server ./server
-  - docker build -t pedrorodrigues/multi-worker ./worker
+  - docker build -t pedrovitorlima/multi-client ./client
+  - docker build -t pedrovitorlima/multi-nginx ./nginx
+  - docker build -t pedrovitorlima/multi-server ./server
+  - docker build -t pedrovitorlima/multi-worker ./worker
   - echo "$DOCKER_HUB_TOLKEN" | docker login -u "$DOCKER_LOGIN" --password-stdin
-  - docker push pedrorodrigues/multi-client
-  - docker push pedrorodrigues/multi-nginx
-  - docker push pedrorodrigues/multi-server
-  - docker push pedrorodrigues/multi-worker
+  - docker push pedrovitorlima/multi-client
+  - docker push pedrovitorlima/multi-nginx
+  - docker push pedrovitorlima/multi-server
+  - docker push pedrovitorlima/multi-worker
   
