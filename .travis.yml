@@ -14,7 +14,7 @@ after_success:
   - docker build -t pedrovitorlima/multi-nginx ./nginx
   - docker build -t pedrovitorlima/multi-server ./server
   - docker build -t pedrovitorlima/multi-worker ./worker
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_LOGIN" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push pedrovitorlima/multi-client
   - docker push pedrovitorlima/multi-nginx
   - docker push pedrovitorlima/multi-server
