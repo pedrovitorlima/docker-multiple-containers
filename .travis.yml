@@ -19,4 +19,3 @@ after_success:
   - docker push pedrovitorlima/multi-nginx
   - docker push pedrovitorlima/multi-server
   - docker push pedrovitorlima/multi-worker
-  
